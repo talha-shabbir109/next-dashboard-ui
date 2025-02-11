@@ -9,18 +9,39 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.5"
+    "@hookform/resolvers": "^4.0.0",
+    "moment": "^2.30.1",
+    "next": "^14.2.23",
+    "react": "^19.0.0",
+    "react-big-calendar": "^1.17.1",
+    "react-calendar": "^5.1.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "recharts": "^2.15.1",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-big-calendar": "^1.16.1",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5"
-  }
+    "typescript": "^5"
+  },
+  "description": "First, run the development server:",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talha-shabbir109/next-dashboard-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talha-shabbir109/next-dashboard-ui/issues"
+  },
+  "homepage": "https://github.com/talha-shabbir109/next-dashboard-ui#readme"
 }
