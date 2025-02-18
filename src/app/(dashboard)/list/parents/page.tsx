@@ -4,7 +4,6 @@ import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
 import { parentsData, role } from "@/lib/data";
 import Image from "next/image";
-import Link from "next/link";
 
 type Parent = {
 	id: number;
@@ -25,20 +24,19 @@ const columns = [
 		accessor: "students",
 		className: "hidden md:table-cell",
 	},
-
 	{
 		header: "Phone",
 		accessor: "phone",
-		className: "hidden md:table-cell",
+		className: "hidden lg:table-cell",
 	},
 	{
 		header: "Address",
 		accessor: "address",
-		className: "hidden md:table-cell",
+		className: "hidden lg:table-cell",
 	},
 	{
 		header: "Actions",
-		accessor: "actions",
+		accessor: "action",
 	},
 ];
 
@@ -79,16 +77,16 @@ const ParentListPage = () => {
 					<TableSearch />
 					<div className="flex items-center gap-4 self-end">
 						<button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-							<Image src="/filter.png" alt="Filter" width={14} height={14} />
+							<Image src="/filter.png" alt="" width={14} height={14} />
 						</button>
 						<button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-							<Image src="/sort.png" alt="Sort" width={14} height={14} />
+							<Image src="/sort.png" alt="" width={14} height={14} />
 						</button>
-						{role === "admin" && <FormModal table="parent" type="create" />}
+						{role === "admin" && <FormModal table="teacher" type="create" />}
 					</div>
 				</div>
 			</div>
-			{/* List */}
+			{/* LIST */}
 			<Table columns={columns} renderRow={renderRow} data={parentsData} />
 			{/* PAGINATION */}
 			<Pagination />

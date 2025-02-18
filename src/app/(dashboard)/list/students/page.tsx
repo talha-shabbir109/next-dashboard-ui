@@ -34,23 +34,18 @@ const columns = [
 		className: "hidden md:table-cell",
 	},
 	{
-		header: "Classes",
-		accessor: "classes",
-		className: "hidden md:table-cell",
-	},
-	{
 		header: "Phone",
 		accessor: "phone",
-		className: "hidden md:table-cell",
+		className: "hidden lg:table-cell",
 	},
 	{
 		header: "Address",
 		accessor: "address",
-		className: "hidden md:table-cell",
+		className: "hidden lg:table-cell",
 	},
 	{
 		header: "Actions",
-		accessor: "actions",
+		accessor: "action",
 	},
 ];
 
@@ -63,7 +58,7 @@ const StudentListPage = () => {
 			<td className="flex items-center gap-4 p-4">
 				<Image
 					src={item.photo}
-					alt="Student Photo"
+					alt=""
 					width={40}
 					height={40}
 					className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
@@ -79,13 +74,15 @@ const StudentListPage = () => {
 			<td className="hidden md:table-cell">{item.address}</td>
 			<td>
 				<div className="flex items-center gap-2">
-					<Link href={`/list/teachers/${item.id}`}>
+					<Link href={`/list/students/${item.id}`}>
 						<button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
 							<Image src="/view.png" alt="" width={16} height={16} />
 						</button>
 					</Link>
 					{role === "admin" && (
-						//
+						// <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
+						//   <Image src="/delete.png" alt="" width={16} height={16} />
+						// </button>
 						<FormModal table="student" type="delete" id={item.id} />
 					)}
 				</div>
@@ -102,21 +99,21 @@ const StudentListPage = () => {
 					<TableSearch />
 					<div className="flex items-center gap-4 self-end">
 						<button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-							<Image src="/filter.png" alt="Filter" width={14} height={14} />
+							<Image src="/filter.png" alt="" width={14} height={14} />
 						</button>
 						<button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-							<Image src="/sort.png" alt="Sort" width={14} height={14} />
+							<Image src="/sort.png" alt="" width={14} height={14} />
 						</button>
 						{role === "admin" && (
 							// <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-							// 	<Image src="/plus.png" alt="Add" width={14} height={14} />
+							//   <Image src="/plus.png" alt="" width={14} height={14} />
 							// </button>
 							<FormModal table="student" type="create" />
 						)}
 					</div>
 				</div>
 			</div>
-			{/* List */}
+			{/* LIST */}
 			<Table columns={columns} renderRow={renderRow} data={studentsData} />
 			{/* PAGINATION */}
 			<Pagination />
